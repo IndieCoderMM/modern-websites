@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Youtube | Home</title>
   </head>
   <body>
@@ -14,7 +15,7 @@
         <h1 class="youtube">You<span class="red tag">Tube</span></h1>
       </div>
 
-      <ul class="side-links-container">
+      <ul class="side-menu-container">
         <li><a href="#">🏠 Home</a></li>
         <li><a href="#">🔥 Trending</a></li>
         <li><a href="#">🧡 Subscriptions</a></li>
@@ -26,94 +27,110 @@
         <li><a href="#">👍 Liked Videos</a></li>
       </ul>
     </div>
-    <nav class="navbar">
-      <a href="#" class="toggle-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
 
-      <div class="search-box">
-        <input type="text" placeholder="Search" />
-        <button>🔍</button>
-      </div>
-      <ul class="nav-items-container">
-        <li><a href="#">🎥</a></li>
-        <li><a href="#">🔔</a></li>
-        <li><a href="#">🧑🏻</a></li>
-      </ul>
-    </nav>
     <main>
+      <div class="navbar">
+        <a href="#" class="toggle-btn active-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
+        <form class="search-box">
+          <input type="search" placeholder="Search" />
+          <button type="submit">🔍</button>
+        </form>
+        <ul class="menu-container">
+          <li><a href="#">🎥</a></li>
+          <li><a href="#">🔔</a></li>
+          <li><a href="#">🧑🏻</a></li>
+        </ul>
+      </div>
       <ul class="tab-container">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Trending</a></li>
-        <li><a href="#">Subscription</a></li>
+        <li id="tab-home" class="tab-btn active-tab"><a href="#">Home</a></li>
+        <li id="tab-trend" class="tab-btn"><a href="#">Trending</a></li>
+        <li id="tab-sub" class="tab-btn"><a href="#">Subscription</a></li>
       </ul>
 
-      <h2 class="section-title">Top Videos for You</h2>
       <section class="video-section">
+        <h2 class="section-title">Top Videos for You</h2>
         <div class="video-container">
-          <a href="video-player.html" class="video-link-box">
+          <a href="video-player.html" class="thumbnail" data-duration="15:34">
             <img
-              class="thumbnail"
               src="..\images\yt-thumbnail6.jpg"
-              alt="thumbnail"
+              alt="thumbnail loading"
+              class="thumbnail-img"
             />
-            <span class="video-name">
-              <b>Build amazing websites</b>
-            </span>
           </a>
-          <span><b>John Youtube</b></span>
-
-          <span>1.1k views . 3 days ago </span>
+          <div class="detail-container">
+            <div class="profile-pic small-profile">🧐</div>
+            <div>
+              <a href="video-player.html" class="video-name hover-red">
+                <b>Business Tips for Beginners</b>
+              </a>
+              <a href="#" class="channel-name hover-red"><b>John Youtube</b></a>
+              <div class="video-detail">1.1k views . 3 days ago</div>
+            </div>
+          </div>
         </div>
         <div class="video-container">
-          <a href="video-player.html" class="video-link-box">
+          <a href="video-player.html" class="thumbnail" data-duration="15:34">
             <img
-              class="thumbnail"
-              src="..\images\yt-thumbnail3.jpg"
-              alt="thumbnail"
-            />
-            <span class="video-name">
-              <b>Build amazing websites</b>
-            </span>
-          </a>
-
-          <span><b>John Youtube</b></span>
-
-          <span>1.1k views . 3 days ago </span>
-        </div>
-        <div class="video-container">
-          <a href="video-player.html" class="video-link-box">
-            <img
-              class="thumbnail"
               src="..\images\yt-thumbnail5.jpg"
-              alt="thumbnail"
+              alt="thumbnail loading"
+              class="thumbnail-img"
             />
-            <span class="video-name">
-              <b>Build amazing websites</b>
-            </span>
           </a>
-
-          <span><b>John Youtube</b></span>
-
-          <span>1.1k views . 3 days ago </span>
+          <div class="detail-container">
+            <div class="profile-pic small-profile">🧔</div>
+            <div>
+              <a href="video-player.html" class="video-name hover-red">
+                <b>Power of Simple Habits</b>
+              </a>
+              <a href="#" class="channel-name hover-red"><b>Kee Simple</b></a>
+              <div class="video-detail">1.1k views . 3 days ago</div>
+            </div>
+          </div>
         </div>
         <div class="video-container">
-          <a href="video-player.html" class="video-link-box">
+          <a href="video-player.html" class="thumbnail" data-duration="15:34">
             <img
-              class="thumbnail"
-              src="..\images\yt-thumbnail7.jpg"
-              alt="thumbnail"
+              src="..\images\yt-thumbnail3.jpg"
+              alt="thumbnail loading"
+              class="thumbnail-img"
             />
-            <span class="video-name">
-              <b>Build amazing websites</b>
-            </span>
           </a>
-
-          <span><b>John Youtube</b></span>
-
-          <span>1.1k views . 3 days ago </span>
+          <div class="detail-container">
+            <div class="profile-pic small-profile">👾</div>
+            <div>
+              <a href="video-player.html" class="video-name hover-red">
+                <b>How to Win at Games</b>
+              </a>
+              <a href="#" class="channel-name hover-red"><b>Dan Gamer</b></a>
+              <div class="video-detail">1.1k views . 3 days ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="video-container">
+          <a href="video-player.html" class="thumbnail" data-duration="15:34">
+            <img
+              src="..\images\yt-thumbnail7.jpg"
+              alt="thumbnail loading"
+              class="thumbnail-img"
+            />
+          </a>
+          <div class="detail-container">
+            <div class="profile-pic small-profile">😎</div>
+            <div>
+              <a href="video-player.html" class="video-name hover-red">
+                <b>Road to Success</b>
+              </a>
+              <a href="#" class="channel-name hover-red"
+                ><b>Bill Richards</b></a
+              >
+              <div class="video-detail">1.1k views . 3 days ago</div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

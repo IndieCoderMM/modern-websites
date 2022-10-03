@@ -9,6 +9,29 @@ body {
     "Lucida Sans", Arial, sans-serif;
 }
 
+/* Global styles  */
+.hide {
+  display: none !important;
+}
+
+.hover-red:hover {
+  color: crimson;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+/* main section  */
+main {
+  margin-top: 3em;
+  margin-left: 12em;
+  background-color: white;
+  position: relative;
+}
+
 /* Navbar styles */
 .navbar {
   display: flex;
@@ -21,6 +44,7 @@ body {
   left: 12em;
   background-color: crimson;
   box-shadow: 0 0.1px 10px rgba(20, 19, 19, 0.367);
+  z-index: 10;
 }
 
 .search-box {
@@ -37,8 +61,6 @@ body {
 
 .search-box input {
   background-color: crimson;
-  border-radius: 0.2em;
-  color: white;
   border: none;
   font-size: 1.3em;
 }
@@ -47,14 +69,13 @@ body {
   border: none;
   background-color: crimson;
   font-size: 1.3em;
-  border-radius: 0.3em;
 }
 
 .search-box button:hover {
-  background-color: white;
+  background-color: lightcoral;
 }
 
-.nav-items-container {
+.menu-container {
   list-style: none;
   display: flex;
   align-items: center;
@@ -63,13 +84,13 @@ body {
   gap: 1em;
 }
 
-.nav-items-container li {
+.menu-container li {
   height: 100%;
   width: 3em;
   text-align: center;
 }
 
-.nav-items-container a {
+.menu-container a {
   text-decoration: none;
   padding: 0.2em;
   display: block;
@@ -78,37 +99,38 @@ body {
   font-size: 1.3em;
 }
 
-.nav-items-container li:hover {
+.menu-container li:hover {
   background-color: lightcoral;
   font-size: larger;
 }
 
 .toggle-btn {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 0.4em;
+  padding: 0.8em;
   align-items: center;
   gap: 0.2em;
   align-items: center;
-  height: 100%;
-}
-
-.toggle-btn:hover {
-  background-color: red;
+  border-radius: 0.4em;
+  margin: 0.5em;
+  height: 90%;
+  margin-left: -1em;
 }
 
 .toggle-btn span {
   width: 2em;
-  height: 0.3em;
-  background-color: black;
+  height: 1em;
+  background-color: white;
+  border-radius: 999px;
 }
 
-/* main section  */
-main {
-  margin-top: 3em;
-  margin-left: 12em;
+.active-toggle {
   background-color: white;
+}
+
+.active-toggle span {
+  background-color: crimson;
 }
 
 .tab-container {
@@ -121,22 +143,27 @@ main {
 
 .tab-container li {
   list-style: none;
-  padding: 0.5em 2em;
   height: 100%;
 }
 
 .tab-container a {
+  display: block;
   text-decoration: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em 1em;
   color: crimson;
+  transition: color 150ms;
 }
 
-.active {
+.tab-container a:hover {
+  background-color: lightcoral;
+  color: white;
+}
+
+.active-tab {
   border-bottom: solid 3px crimson;
-}
-
-.section-title {
-  padding: 1em 2em;
-  margin-bottom: 0;
+  font-weight: bold;
 }
 
 .video-section {
@@ -144,9 +171,14 @@ main {
   width: 90%;
   margin: auto;
   justify-content: space-around;
-  background-color: lightblue;
-  border-top: solid 1px crimson;
+  background-color: #fff;
   flex-wrap: wrap;
+}
+
+.section-title {
+  padding: 0 0 1em 1em;
+  width: 100%;
+  border-bottom: solid 1px;
 }
 
 .video-container {
@@ -159,20 +191,80 @@ main {
 }
 
 .video-name {
-  color: crimson;
+  display: block;
+  text-decoration: none;
+  color: black;
   font-size: 1.3em;
+  transition: color 200ms;
 }
 
-.video-link-box {
+.channel-name {
   text-decoration: none;
+  color: #999;
+  transition: color 200ms;
+}
+
+.profile-pic {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 2em;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: deepskyblue;
+  border: solid 3px black;
+}
+
+.detail-container {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.profile-pic:hover {
+  box-shadow: 2px 3px 10px #aaa;
+  border-color: white;
+}
+
+.small-profile {
+  width: 50px;
+  height: 50px;
+  font-size: 1.8em;
+}
+
+.video-detail {
+  font-size: 0.8em;
 }
 
 .thumbnail {
-  width: 90%;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.thumbnail-img {
+  width: 100%;
   border: solid 0.5px;
   border-radius: 0.4em;
+  min-width: 250px;
+}
+
+.thumbnail-img:hover {
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.546);
+}
+
+.thumbnail::before {
+  content: attr(data-duration);
+  background-color: rgba(20, 19, 19, 0.367);
+  color: white;
+  padding: 1px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-bottom-right-radius: 0.4em;
 }
 
 /* Sidebar Styles  */
@@ -222,7 +314,7 @@ h1 {
   color: crimson;
 }
 
-.side-links-container {
+.side-menu-container {
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -230,25 +322,25 @@ h1 {
   align-items: center;
 }
 
-.side-links-container hr {
+.side-menu-container hr {
   width: 80%;
   background-color: white;
 }
 
-.side-links-container li {
+.side-menu-container li {
   list-style: none;
   padding: 0.5em 1em;
   width: 100%;
 }
 
-.side-links-container a {
+.side-menu-container a {
   text-decoration: none;
   color: white;
   font-size: 1.1em;
   display: block;
 }
 
-.side-links-container li:hover {
+.side-menu-container li:hover {
   background-color: crimson;
   font-weight: bold;
 }
@@ -305,17 +397,7 @@ h1 {
 }
 
 .feedback-btn-container li:hover {
-  background-color: darksalmon;
-}
-
-.profile-pic {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  font-size: 2em;
-  border-radius: 50%;
-  display: inline-block;
-  background-color: deepskyblue;
+  background-color: lightcoral;
 }
 
 .sub-btn {
@@ -339,11 +421,11 @@ h1 {
   justify-content: flex-start;
   padding: 1em 0.5em;
   border-left: solid 1px crimson;
+  color: black;
   /* overflow-y: scroll; */
 }
 
 .next-video {
-  color: crimson;
   padding: 1em 0.5em;
   display: flex;
   gap: 0.5em;
@@ -351,12 +433,23 @@ h1 {
 
 .next-thumbnail {
   width: 50%;
+  position: relative;
 }
 
 .next-thumbnail img {
   width: 100%;
+  height: 100%;
 }
 
 .next-thumbnail img:hover {
-  box-shadow: 1px 3px 8px rgba(215, 110, 110, 0.609);
+  box-shadow: 2px 5px 10px rgba(54, 52, 52, 0.609);
+}
+
+.next-thumbnail::before {
+  content: attr(data-duration);
+  background-color: rgba(20, 19, 19, 0.8);
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
