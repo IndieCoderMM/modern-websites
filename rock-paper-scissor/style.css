@@ -1,0 +1,117 @@
+body {
+  background-color: cadetblue;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+}
+
+.selections {
+  display: flex;
+  justify-content: center;
+}
+
+.selection {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 4rem;
+  transition: 100ms;
+}
+
+.selection:hover {
+  transform: scale(1.5);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.results div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nameplate {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.6em;
+  font-weight: bold;
+  width: 70%;
+  text-align: center;
+}
+
+.result-score {
+  margin-left: 0.1rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  width: 3em;
+  text-align: center;
+  color: white;
+  padding: 0.5em 1em;
+  background-color: darkslateblue;
+  border-radius: 0.4em;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  gap: 2em;
+}
+
+.score-board div {
+  padding: 0.2em 0.5em;
+  background-color: white;
+  border-radius: 0.5em;
+}
+
+.result-history {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.result-history div {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+}
+
+.result-history > div:last-child {
+  width: 30%;
+  height: 4em;
+  font-size: 1.5em;
+  border: solid 3px white;
+  border-radius: 0.4em;
+}
+
+.result-selection {
+  opacity: 0.5;
+  font-size: 1.4em;
+}
+.result-winner {
+  font-size: 1.8em;
+  opacity: 1;
+}
