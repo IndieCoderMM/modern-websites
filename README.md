@@ -1,8 +1,8 @@
 # Web Projects
 HTML-CSS-JS Playground.
 
-1. [#Youtube Redesign]
-2. [[#Rock-Paper-Scissors Game]]
+1. [##Youtube Redesign]
+2. [[##Rock-Paper-Scissors Game]]
 
 ## [YouTube Redesign](https://indiecodermm.github.io/modern-websites/youtube/index.html)
 
