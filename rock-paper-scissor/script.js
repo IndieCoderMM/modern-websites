@@ -2,8 +2,6 @@ const selectionButtons = document.querySelectorAll("[data-selection]");
 const pScoreText = document.getElementById("p-score");
 const aiScoreText = document.getElementById("ai-score");
 const resultContainer = document.getElementsByClassName("result-history")[0];
-// const playerBox = document.getElementById("player-selection");
-// const aiBox = document.getElementById("ai-selection");
 
 let pScore = 0;
 let aiScore = 0;
