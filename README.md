@@ -1,4 +1,5 @@
-# Web Projects - HTML/CSS/JS Playground
+# Web Projects
+HTML-CSS-JS Playground.
 
 ## [YouTube Redesign](https://indiecodermm.github.io/modern-websites/youtube/index.html)
 
