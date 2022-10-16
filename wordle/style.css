@@ -41,9 +41,7 @@ h1 {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .letter[data-state="active"] {
@@ -71,6 +69,7 @@ h1 {
   justify-content: center;
   align-items: center;
   border: solid 1px;
+  padding: 1em;
 }
 
 .key-row {
@@ -80,11 +79,11 @@ h1 {
 }
 
 .key {
-  font-size: inherit;
-  width: 3em;
-  height: 3.3em;
+  font-size: 1.1em;
   margin: 0;
   padding: 0;
+  width: 2em;
+  height: 2em;
   background-color: hsl(
     var(--hue, 200),
     var(--sat, 1%),
@@ -129,4 +128,29 @@ h1 {
   --hue: 125;
   --sat: 40%;
   --light: 43%;
+}
+
+.alert-container {
+  position: fixed;
+  top: 10vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert {
+  pointer-events: none;
+  background-color: hsl(204, 7%, 85%);
+  padding: 0.5em;
+  border-radius: 0.25em;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  margin-bottom: 0.5em;
+}
+
+.alert.hide {
+  opacity: 0;
 }
