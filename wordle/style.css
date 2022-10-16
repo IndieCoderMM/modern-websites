@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(240, 3%, 7%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  /* font-size: clamp(0.5rem, 2.5vmin, 1.5rem); */
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  border-bottom: solid 1px;
+  margin: 0;
+}
+
+.guess-board {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  grid-template-rows: repeat(6, 3em);
+  grid-template-columns: repeat(5, 3em);
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+  gap: 0.3em;
+}
+
+.letter {
+  font-size: 1.8em;
+  border: 0.05em solid hsl(240, 2%, 23%);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter[data-state="active"] {
+  border-color: hsl(200, 1%, 34%);
+}
+
+.letter[data-state="wrong"] {
+  border: none;
+  background-color: hsl(240, 2%, 23%);
+}
+
+.letter[data-state="wrong-location"] {
+  border: none;
+  background-color: hsl(49, 86%, 46%);
+}
+
+.letter[data-state="correct"] {
+  border: none;
+  background-color: hsl(115, 51%, 45%);
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+}
+
+.key-row {
+  display: flex;
+  gap: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.key {
+  font-size: inherit;
+  width: 3em;
+  height: 3.3em;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(
+    var(--hue, 200),
+    var(--sat, 1%),
+    calc(var(--light-offset, 0%) + var(--light, 51%))
+  );
+  color: white;
+  border: none;
+  border-radius: 0.4em;
+  transition: 100ms;
+}
+
+.key:hover,
+.key:focus {
+  --light-offset: 10%;
+}
+
+.key.large {
+  width: 4em;
+}
+
+.enter {
+  --hue: 250;
+  --sat: 50%;
+}
+
+.del {
+  --hue: 0;
+  --sat: 70%;
+}
+
+.key.wrong {
+  --light: 23%;
+}
+
+.key.wrong-location {
+  --hue: 55;
+  --sat: 51%;
+  --light: 47%;
+}
+
+.key.correct {
+  --hue: 125;
+  --sat: 40%;
+  --light: 43%;
+}
