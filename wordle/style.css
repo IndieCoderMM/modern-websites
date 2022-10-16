@@ -8,7 +8,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: hsl(240, 3%, 7%);
+  background-color: hsl(300, 6%, 13%);
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -16,11 +16,39 @@ body {
   /* font-size: clamp(0.5rem, 2.5vmin, 1.5rem); */
 }
 
-h1 {
-  color: white;
-  text-align: center;
-  border-bottom: solid 1px;
-  margin: 0;
+.title {
+  text-transform: uppercase;
+  font-family: Tahoma, sans-serif;
+  font-size: 3.5em;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  color: hsl(93, 38%, 50%);
+}
+
+.logo.w {
+  transform: rotateZ(-15deg) translateY(10%);
+}
+
+.logo.o {
+  transform: translateY(10%);
+}
+
+.logo.r {
+  transform: rotateZ(10deg);
+  color: hsl(252, 31%, 52%);
+}
+
+.logo.d {
+  transform: rotateZ(-5deg);
+}
+
+.logo.l {
+  transform: rotateZ(-10deg) translateY(10%);
+}
+
+.logo.e {
+  transform: rotateZ(10deg) translateY(5%);
 }
 
 .guess-board {
@@ -50,17 +78,17 @@ h1 {
 
 .letter[data-state="wrong"] {
   border: none;
-  background-color: hsl(240, 2%, 23%);
+  background-color: hsl(20, 12%, 34%);
 }
 
 .letter[data-state="wrong-location"] {
   border: none;
-  background-color: hsl(49, 86%, 46%);
+  background-color: hsl(252, 31%, 52%);
 }
 
 .letter[data-state="correct"] {
   border: none;
-  background-color: hsl(115, 51%, 45%);
+  background-color: hsl(93, 38%, 50%);
 }
 
 .keyboard {
@@ -68,7 +96,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 1px;
   padding: 1em;
 }
 
@@ -105,13 +132,14 @@ h1 {
 }
 
 .enter {
-  --hue: 250;
-  --sat: 50%;
+  --hue: 202;
+  --sat: 75%;
 }
 
 .del {
-  --hue: 0;
-  --sat: 70%;
+  --hue: 351;
+  --sat: 94%;
+  --light: 45%;
 }
 
 .key.wrong {
@@ -119,15 +147,15 @@ h1 {
 }
 
 .key.wrong-location {
-  --hue: 55;
-  --sat: 51%;
-  --light: 47%;
+  --hue: 252;
+  --sat: 31%;
+  --light: 52%;
 }
 
 .key.correct {
-  --hue: 125;
-  --sat: 40%;
-  --light: 43%;
+  --hue: 93;
+  --sat: 38%;
+  --light: 50%;
 }
 
 .alert-container {
