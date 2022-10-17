@@ -5,6 +5,12 @@
   user-select: none;
 }
 
+:root {
+  --green: hsl(93, 38%, 50%);
+  --purple: hsl(252, 31%, 52%);
+  --gray: hsl(20, 12%, 34%);
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -23,7 +29,7 @@ body {
   font-weight: 700;
   display: flex;
   justify-content: center;
-  color: hsl(93, 38%, 50%);
+  color: var(--green);
 }
 
 .logo.w {
@@ -36,7 +42,7 @@ body {
 
 .logo.r {
   transform: rotateZ(10deg);
-  color: hsl(252, 31%, 52%);
+  color: var(--purple);
 }
 
 .logo.d {
@@ -78,17 +84,17 @@ body {
 
 .letter[data-state="wrong"] {
   border: none;
-  background-color: hsl(20, 12%, 34%);
+  background-color: var(--gray);
 }
 
 .letter[data-state="wrong-location"] {
   border: none;
-  background-color: hsl(252, 31%, 52%);
+  background-color: var(--purple);
 }
 
 .letter[data-state="correct"] {
   border: none;
-  background-color: hsl(93, 38%, 50%);
+  background-color: var(--green);
 }
 
 .keyboard {
@@ -131,12 +137,13 @@ body {
   width: 4em;
 }
 
-.enter {
-  --hue: 202;
+.key[data-enter] {
+  --hue: 210;
   --sat: 75%;
+  --light: 30%;
 }
 
-.del {
+.key[data-delete] {
   --hue: 351;
   --sat: 94%;
   --light: 45%;
@@ -181,4 +188,71 @@ body {
 
 .alert.hide {
   opacity: 0;
+}
+
+.scoreboard {
+  background-color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  position: fixed;
+  top: 20vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  z-index: 1;
+}
+
+.scoreboard.hide {
+  display: none;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+}
+
+.tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.25em;
+}
+
+.tag .number {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.tag p {
+  margin: 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+.next-btn {
+  font-size: 1.1em;
+  padding: 0.8em;
+  text-transform: uppercase;
+  border-radius: 0.4em;
+  border: solid 1px var(--green);
+  background-color: var(--green);
+  color: white;
+  font-weight: bold;
+  margin-top: 1em;
+  transition: 200ms;
+}
+
+.next-btn:hover {
+  box-shadow: 0 0.5em 0.5em -0.3em var(--green);
+  background-color: white;
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-0.25em);
 }

@@ -18,6 +18,28 @@
       <div class="logo e">E</div>
     </div>
     <div class="alert-container" data-alert-container></div>
+    <div class="scoreboard hide" data-scoreboard>
+      <h2 data-status>Guess Count : 3</h2>
+      <div class="bar">
+        <div class="tag">
+          <p data-games class="number">3</p>
+          <p>Played</p>
+        </div>
+        <div class="tag">
+          <p data-win class="number">100</p>
+          <p>Win %</p>
+        </div>
+        <div class="tag">
+          <p data-streak class="number">3</p>
+          <p>Current Streak</p>
+        </div>
+        <div class="tag">
+          <p data-max-streak class="number">3</p>
+          <p>Max Streak</p>
+        </div>
+      </div>
+      <button data-next-btn class="next-btn">Next Wordle</button>
+    </div>
     <div data-guess-board class="guess-board">
       <div class="letter"></div>
       <div class="letter"></div>
@@ -75,7 +97,7 @@
         <button class="key" data-key="L">L</button>
       </div>
       <div class="key-row">
-        <button data-enter class="key large enter">Enter</button>
+        <button data-enter class="key large">Enter</button>
         <button class="key" data-key="Z">Z</button>
         <button class="key" data-key="X">X</button>
         <button class="key" data-key="C">C</button>
@@ -83,7 +105,7 @@
         <button class="key" data-key="B">B</button>
         <button class="key" data-key="N">N</button>
         <button class="key" data-key="M">M</button>
-        <button data-delete class="key large del">&larr;</button>
+        <button data-delete class="key large">&larr;</button>
       </div>
     </div>
   </body>
