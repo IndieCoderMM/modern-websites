@@ -5,8 +5,8 @@
 This project is Youtube website clone with some changes in design.
 
 <div align="center"> 
-  <img src="https://github.com/IndieCoderMM/modern-websites/blob/master/screenshots/ss-yt-home.png" alt="screenshot" />
-  <img src="https://github.com/IndieCoderMM/modern-websites/blob/master/screenshots/ss-yt-player.png" alt="screenshot" />
+  <img src="../screenshots/ss-yt-home.png" alt="screenshot" />
+  <img src="../screenshots/ss-yt-player.png" alt="screenshot" />
 </div>
 
 <!-- Project Link -->
