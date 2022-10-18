@@ -13,11 +13,11 @@ This project is Youtube website clone with some changes in design.
 
 ## :rocket: Project Webpage
 
-#### [Youtube Redesign](https://indiecodermm.github.io/modern-websites/youtube/index.html)
+### :web: [Youtube Redesign](https://indiecodermm.github.io/modern-websites/youtube/index.html)
 
 <!-- Features -->
 
-### :dart: Features
+## :dart: Features
 
 - basic YouTube layout
 - emoji icons
@@ -30,4 +30,4 @@ This project is Youtube website clone with some changes in design.
 
 IndieCoderMM - hthant00chk@gmail.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: [https://github.com/IndieCoderMM/modern-websites/tree/master/youtube](https://github.com/IndieCoderMM/modern-websites/tree/master/youtube)
