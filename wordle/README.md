@@ -30,4 +30,4 @@ This project is inspired by [Wordle](https://www.nytimes.com/games/wordle/index.
 
 IndieCoderMM - hthant00chk@gmail.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: [https://github.com/IndieCoderMM/modern-websites/tree/master/wordle](https://github.com/IndieCoderMM/modern-websites/tree/master/wordle)
