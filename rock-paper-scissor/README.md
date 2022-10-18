@@ -5,8 +5,8 @@
 This is a website to play the classic Rock-Paper-Scissors game.
 
 <div align="center"> 
-  <img src="https://github.com/IndieCoderMM/modern-websites/blob/master/screenshots/ss-rps-1.png" alt="screenshot" />
-  <img src="https://github.com/IndieCoderMM/modern-websites/blob/master/screenshots/ss-rps-2.png" alt="screenshot" />
+  <img src="../screenshots/ss-rps-1.png" alt="screenshot" />
+  <img src="../screenshots/ss-rps-2.png" alt="screenshot" />
 </div>
 
 <!-- Project Link -->
