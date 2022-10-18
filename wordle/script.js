@@ -2,49 +2,79 @@ import dictJson from "./dictionary.json" assert { type: "json" };
 import puzzleJson from "./puzzle_words.json" assert { type: "json" };
 
 const LOCAL_GAMES = "games";
-const LOCAL_WIN_RATE = "winRate";
+const LOCAL_WINS = "wins";
+const LOCAL_LAST_GAME = "lastGame";
 const LOCAL_STREAK = "currentStreak";
 const LOCAL_MAX_STREAK = "maxStreak";
+
+if (localStorage.getItem(LOCAL_GAMES) == null) {
+  initLocalStorage(
+    LOCAL_GAMES,
+    LOCAL_MAX_STREAK,
+    LOCAL_STREAK,
+    LOCAL_WINS,
+    LOCAL_LAST_GAME
+  );
+}
 
 const guessBoard = document.querySelector("[data-guess-board]");
 const alertContainer = document.querySelector("[data-alert-container");
 const keyboard = document.querySelector("[data-keyboard]");
 const scoreboard = document.querySelector("[data-scoreboard]");
+const nextGameBtn = document.querySelector("[data-next-btn]");
 
 const dictionary = dictJson["1"];
 const puzzleWords = puzzleJson["1"];
 const WORD_LENGTH = 5;
 const MAX_TRIAL = 6;
 
-let totalGames;
-let winRate;
-let currentStreak;
-let MaxStreak;
-
-let totalSubmit;
-let targetWord;
-
-initLocalStorage(LOCAL_GAMES, LOCAL_MAX_STREAK, LOCAL_STREAK, LOCAL_WIN_RATE);
+let totalSubmit = 0;
+let targetWord = "lucky";
+let victory = false;
 
 startNewGame();
 
-function initLocalStorage(...keys) {
-  console.log(keys);
-  for (let key of keys) {
-    if (localStorage.getItem(key) == null) {
-      console.log(key, "not exist!");
-    }
-  }
+function updateStatistics() {
+  let totalGames = getLocalData(LOCAL_GAMES) + 1;
+  let currentWin = victory ? 1 : 0;
+  let totalWins = getLocalData(LOCAL_WINS) + currentWin;
+  let lastWin = getLocalData(LOCAL_LAST_GAME);
+  let currentStreak =
+    lastWin == 1 && victory ? getLocalData(LOCAL_STREAK) + 1 : currentWin;
+  let maxStreak = getLocalData(LOCAL_MAX_STREAK);
+  maxStreak = currentStreak > maxStreak ? currentStreak : maxStreak;
+
+  localStorage.setItem(LOCAL_GAMES, totalGames);
+  localStorage.setItem(LOCAL_WINS, totalWins);
+  localStorage.setItem(LOCAL_LAST_GAME, currentWin);
+  localStorage.setItem(LOCAL_STREAK, currentStreak);
+  localStorage.setItem(LOCAL_MAX_STREAK, maxStreak);
+}
+
+function updateScoreboard() {
+  scoreboard.querySelector("[data-games]").textContent =
+    localStorage.getItem(LOCAL_GAMES);
+  let winRate = getLocalData(LOCAL_WINS) / getLocalData(LOCAL_GAMES);
+
+  scoreboard.querySelector("[data-win-rate]").textContent = winRate.toFixed(2);
+  scoreboard.querySelector("[data-streak]").textContent =
+    localStorage.getItem(LOCAL_STREAK);
+  scoreboard.querySelector("[data-max-streak]").textContent =
+    localStorage.getItem(LOCAL_MAX_STREAK);
 }
 
 function startNewGame() {
+  victory = false;
   totalSubmit = 0;
   targetWord = getPuzzleWord();
+  resetDisplay();
   startInteraction();
+  scoreboard.classList.add("hide");
 }
 
 function getPuzzleWord() {
   const index = Math.floor(Math.random() * puzzleWords.length);
+  console.log(puzzleWords[index]);
   return puzzleWords[index];
 }
 
@@ -54,10 +84,12 @@ function isWordExist(word) {
 
 function startInteraction() {
   document.addEventListener("click", handleClick);
+  nextGameBtn.removeEventListener("click", startNewGame);
 }
 
 function stopInteraction() {
   document.removeEventListener("click", handleClick);
+  nextGameBtn.addEventListener("click", startNewGame);
 }
 
 function handleClick(e) {
@@ -65,12 +97,10 @@ function handleClick(e) {
     pressKey(e.target.dataset.key);
     return;
   }
-
   if (e.target.matches("[data-enter]")) {
     submitGuess();
     return;
   }
-
   if (e.target.matches("[data-delete]")) {
     deleteLetter();
     return;
@@ -109,12 +139,23 @@ function submitGuess() {
   }
   totalSubmit++;
   activeLetters.forEach(highlightLetters);
+
   if (targetWord.toLowerCase() === guessWord.toLowerCase()) {
-    showScoreboard(`Guess Count : ${totalSubmit}`);
+    victory = true;
+    updateStatistics();
+    updateScoreboard();
     stopInteraction();
+    setTimeout(() => {
+      showScoreboard(`Guess Count : ${totalSubmit}`);
+    }, 1000);
   } else if (totalSubmit >= MAX_TRIAL) {
-    showScoreboard(`Correct Word : ${targetWord.toUpperCase()}`);
+    victory = false;
+    updateStatistics();
+    updateScoreboard();
     stopInteraction();
+    setTimeout(() => {
+      showScoreboard(`Correct Word : ${targetWord.toUpperCase()}`);
+    }, 1000);
   }
 }
 
@@ -122,7 +163,7 @@ function getActiveLetters() {
   return guessBoard.querySelectorAll('[data-state="active"]');
 }
 
-function resetGame() {
+function resetDisplay() {
   const inputLetters = [...guessBoard.querySelectorAll("[data-letter]")];
   const keys = [...keyboard.querySelectorAll("[data-key]")];
   inputLetters.forEach((letter) => {
@@ -136,14 +177,8 @@ function resetGame() {
 }
 
 function showScoreboard(status) {
-  const nextButton = scoreboard.querySelector("[data-next-btn]");
   scoreboard.classList.remove("hide");
   scoreboard.querySelector("[data-status]").textContent = status;
-  nextButton.addEventListener("click", () => {
-    scoreboard.classList.add("hide");
-    resetGame();
-    startNewGame();
-  });
 }
 
 function showAlert(message, duration = 1000) {
@@ -176,20 +211,17 @@ function highlightLetters(item, index, activeLetters) {
   }
 }
 
-function getRandomWord() {
-  return fetch("http://localhost:5000/random-word")
-    .then((response) => {
-      console.log(response);
-      response.json();
-    })
-    .then((json) => {
-      console.log(json);
-      targetWord = json.toLowerCase();
-    })
-    .catch((error) => {
-      console.log(error);
-      targetWord = "error";
-    });
+function initLocalStorage(...keys) {
+  for (let key of keys) {
+    if (localStorage.getItem(key) == null) {
+      localStorage.setItem(key, 0);
+      console.log("Set up storage for", key);
+    }
+  }
+}
+
+function getLocalData(key) {
+  return parseInt(localStorage.getItem(key));
 }
 
 // getRandomWord();
