@@ -13,11 +13,11 @@ This project is inspired by [Wordle](https://www.nytimes.com/games/wordle/index.
 
 ## :rocket: Project Webpage
 
-#### [Play Wordle Game](https://indiecodermm.github.io/modern-websites/wordle/index.html)
+### :jigsaw: [Play Wordle Game](https://indiecodermm.github.io/modern-websites/wordle/index.html)
 
 <!-- Features -->
 
-### :dart: Features
+## :dart: Features
 
 - generate random word for each puzzle
 - check the word is valid or not
