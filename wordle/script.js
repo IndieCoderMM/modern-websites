@@ -54,9 +54,10 @@ function updateStatistics() {
 function updateScoreboard() {
   scoreboard.querySelector("[data-games]").textContent =
     localStorage.getItem(LOCAL_GAMES);
-  let winRate = getLocalData(LOCAL_WINS) / getLocalData(LOCAL_GAMES);
+  let winRate =
+    (getLocalData(LOCAL_WINS) / getLocalData(LOCAL_GAMES)).toFixed(4) * 100;
 
-  scoreboard.querySelector("[data-win-rate]").textContent = winRate.toFixed(2);
+  scoreboard.querySelector("[data-win-rate]").textContent = winRate;
   scoreboard.querySelector("[data-streak]").textContent =
     localStorage.getItem(LOCAL_STREAK);
   scoreboard.querySelector("[data-max-streak]").textContent =
