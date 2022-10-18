@@ -13,7 +13,7 @@ This project is Youtube website clone with some changes in design.
 
 ## :rocket: Project Webpage
 
-### :web: [Youtube Redesign](https://indiecodermm.github.io/modern-websites/youtube/index.html)
+### :computer: [Youtube Redesign](https://indiecodermm.github.io/modern-websites/youtube/index.html)
 
 <!-- Features -->
 
