@@ -1,5 +1,5 @@
-# Web Projects
+# :man_technologist: Web Projects
 
-1. [Youtube](#youtube-redesign)
-2. [Rock-Paper-Scissors](#rock-paper-scissors-game)
-3. [Wordle](https://indiecodermm.github.io/modern-websites/wordle/README.md)
+### :computer: [Youtube](https://github.com/IndieCoderMM/modern-websites/blob/master/youtube/README.md)
+### :joystick: [Rock-Paper-Scissors](https://github.com/IndieCoderMM/modern-websites/blob/master/rock-paper-scissors/README.md)
+### :jigsaw: [Wordle](https://github.com/IndieCoderMM/modern-websites/blob/master/wordle/README.md)
