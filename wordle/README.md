@@ -6,7 +6,7 @@ This project is inspired by [Wordle](https://www.nytimes.com/games/wordle/index.
 
 <div align="center"> 
   <img src="../screenshots/ss-wdle-1.png" alt="screenshot" />
-  <img src="https://github.com/IndieCoderMM/modern-websites/blob/master/screenshots/ss-wdle-2.png" alt="screenshot" />
+  <img src="../screenshots/ss-wdle-2.png" alt="screenshot" />
 </div>
 
 <!-- Project Link -->
