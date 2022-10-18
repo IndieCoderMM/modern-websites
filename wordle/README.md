@@ -5,7 +5,7 @@
 This project is inspired by [Wordle](https://www.nytimes.com/games/wordle/index.html) from the New York Times. In this game, player has to guess the mystery word in 6 tries.
 
 <div align="center"> 
-  <img src="https://github.com/IndieCoderMM/modern-websites/blob/master/screenshots/ss-wdle-1.png" alt="screenshot" />
+  <img src="../screenshots/ss-wdle-1.png" alt="screenshot" />
   <img src="https://github.com/IndieCoderMM/modern-websites/blob/master/screenshots/ss-wdle-2.png" alt="screenshot" />
 </div>
 
