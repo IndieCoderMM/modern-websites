@@ -74,7 +74,6 @@ function startNewGame() {
 
 function getPuzzleWord() {
   const index = Math.floor(Math.random() * puzzleWords.length);
-  console.log(puzzleWords[index]);
   return puzzleWords[index];
 }
 
