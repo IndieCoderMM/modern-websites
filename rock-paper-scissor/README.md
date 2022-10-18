@@ -13,11 +13,11 @@ This is a website to play the classic Rock-Paper-Scissors game.
 
 ## :rocket: Project Webpage
 
-#### [Play Rock-Paper-Scissors](https://indiecodermm.github.io/modern-websites/rock-paper-scissor/index.html)
+### :joystick: [Play Rock-Paper-Scissors](https://indiecodermm.github.io/modern-websites/rock-paper-scissor/index.html)
 
 <!-- Features -->
 
-### :dart: Features
+## :dart: Features
 
 - emoji buttons
 - _vs AI_ mode
@@ -30,4 +30,4 @@ This is a website to play the classic Rock-Paper-Scissors game.
 
 IndieCoderMM - hthant00chk@gmail.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: [https://github.com/IndieCoderMM/modern-websites/tree/master/rock-paper-scissor](https://github.com/IndieCoderMM/modern-websites/tree/master/rock-paper-scissor)
